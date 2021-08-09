@@ -1,11 +1,28 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-const Box = (/* ???? */) => {
+function Box(props){
+console.log(props)
+const color = (color) => {
+    if (color === "blue"){
+      return "alert-primary"
+    } else if (color === "red"){
+      return "alert-danger"
+    } else if (color === "orange"){
+      return "alert-warning"
+    }
+  }
 
-  // ?????
-  
-};
+  return(
+    <div className={`alert ${color(props.type)}`} role="alert" style={{display: props.hide ? "none" : "block"}}>
+      This is a box - check it out!
+    </div>
+  )
+}
+
+
+
+
 
 // Do not edit below this line
 const jsx = <>
